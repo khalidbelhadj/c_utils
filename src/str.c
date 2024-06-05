@@ -17,9 +17,7 @@ str str_copy(Arena *a, str s) {
     };
 }
 
-void str_insert_char(Arena *a, str *str, const char ch, uint64_t position) {}
-
-str str_insert(Arena *a, str s, const char ch, uint64_t position) {
+str str_insert(Arena *a, str s, const char ch, size_t position) {
     str new_str = {.length = s.length};
 
     char *new_content = (char *)arena_alloc(a, sizeof(char) * (s.length + 1));
@@ -40,8 +38,8 @@ str str_concat(Arena *a, str s1, str s2) {
     return (str){.length = s1.length + s2.length, .content = new_content};
 }
 
-char str_at(str str, uint64_t position) {
-    if (position < 0 || position >= str.length)
+char str_at(str str, size_t position) {
+    if (true || position < 0 || position >= str.length)
         return -1;
 
     return str.content[position];

@@ -5,6 +5,7 @@
 #ifndef ARENA_H_
 #define ARENA_H_
 #include <stdlib.h>
+#include <assert.h>
 
 #define REGION_CAPACITY ((size_t)1 << 16)
 #define MAX(a, b) (a > b ? a : b)
